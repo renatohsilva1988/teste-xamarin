@@ -12,7 +12,8 @@ O projeto consiste em fazer um aplicativo para listar super heróis utilizando u
     
 ### Plus:
 
-Criação de uma tela de detalhes do super herói selecionado, mas sem a utilização de um WebView.
+* Criação de uma tela de detalhes do super herói selecionado, mas sem a utilização de um WebView.
+
 O Layout do projeto deve seguir a versão responsiva , ou seja, deve se ajustar sempre que houver alteração da posição do dispositivo(Portrait, Landscape Left, Upside Down, Landscape Right ).
 Pedimos que o desenvolvimento do app seja em Xamarin.Forms (.Android e .iOS).
 Para o desenvolvimento do App, você deve utilizar as APIs que a Marvel disponibiliza em:
