@@ -30,9 +30,3 @@ Para o desenvolvimento do App, você deve utilizar as APIs que a Marvel disponib
 
 https://developer.marvel.com/
 
-
-### Cronograma do projeto:
-
-* Esperamos receber o projeto em até 3 dias.
-* Caso você precise de mais tempo, por favor nos avise.
-* Projetos enviados fora do prazo de 3 dias e que não tenham sinalizado a necessidade de expansão do prazo serão desconsiderados.
