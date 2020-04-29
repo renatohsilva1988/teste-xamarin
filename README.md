@@ -1,14 +1,24 @@
 ## Projeto Theòs Hero
 
+# Instruções
+
+    Esse teste é público. Todos os interessados que fizerem pull request receberão um feedback da equipe
+    Theòs Sistemas
+    
+    1. Faça um fork deste repositório;
+    2. Crie uma branch com o seu nome.
+    2. Adicione seu currículo na raiz do repositório.
+    3. Envie-nos o PULL-REQUEST para que seja avaliado.
+
 # Objetivo:
 
 O objetivo desse projeto é mostrar suas habilidades com desenvolvimento Mobile como Xamarin. Procure deixar o código mais simples possível.
 O projeto consiste em fazer um aplicativo para listar super heróis utilizando uma API da marvel e deve conter as seguintes funcionalidades:
     
-    1. Themas(LightMode(Modo Claro), DarkMode(Modo Escuro))
-    2. Listagem dos super-heróis limitados à 6 itens por página
-    2. Deve ser possível filtrar os personagens por nome
-    3. Paginação conforme número de super heróis
+* Themas(LightMode(Modo Claro), DarkMode(Modo Escuro))
+* Listagem dos super-heróis limitados à 6 itens por página
+* Deve ser possível filtrar os personagens por nome
+* Paginação conforme número de super heróis
     
 ### Plus:
 
