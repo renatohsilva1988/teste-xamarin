@@ -19,6 +19,7 @@ O projeto consiste em fazer um aplicativo para listar super heróis utilizando u
 * Listagem dos super-heróis limitados à 6 itens por página
 * Deve ser possível filtrar os personagens por nome
 * Paginação conforme número de super heróis
+* Pedimos que se faça uso das fonts Roboto-Black e Roboto-Light
     
 ### Plus:
 
