@@ -1,15 +1,5 @@
 ## Projeto Theòs Hero
 
-# Instruções
-
-    Esse teste é público. Todos os interessados que fizerem pull request receberão um feedback da equipe
-    Theòs Sistemas
-    
-    1. Faça um fork deste repositório;
-    2. Crie uma branch com o seu nome.
-    2. Adicione seu currículo na raiz do repositório.
-    3. Envie-nos o PULL-REQUEST para que seja avaliado.
-
 # Objetivo:
 
 O objetivo desse projeto é mostrar suas habilidades com desenvolvimento Mobile como Xamarin. Procure deixar o código mais simples possível.
@@ -39,4 +29,12 @@ https://drive.google.com/open?id=1LfAAdw0wSHygoXxyKKmtOze_RHMBEMoO
 
  Não se limite ao protótipo a cima. 
  Sugestões ou novas funcionalidades será um diferencial.
+
+
+## Como deverá ser entregue:
+
+    1. Faça um fork deste repositório;
+    2. Realize o teste;
+    3. Adicione seu currículo na raiz do repositório;
+    4. Envie-nos o PULL-REQUEST para que seja avaliado;
 
