@@ -1,0 +1,188 @@
+﻿<?xml version="1.0" encoding="utf-8" ?>
+<Application xmlns="http://xamarin.com/schemas/2014/forms"
+             xmlns:x="http://schemas.microsoft.com/winfx/2009/xaml"
+             xmlns:d="http://xamarin.com/schemas/2014/forms/design"
+             xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006"
+             xmlns:controles="clr-namespace:MarvelApp.Controls"
+             mc:Ignorable="d"
+             x:Class="MarvelApp.App">
+    <Application.Resources>
+        <Color x:Key="ColorDarkGreen">#506531</Color>
+        <Color x:Key="ColorLightGreen">#63A91F</Color>
+        <Color x:Key="ColorBlack">#1E2019</Color>
+        <Color x:Key="ColorBrown">#4D4729</Color>
+        <Color x:Key="ColorWhite">#FFFFFF</Color>
+        <Color x:Key="ColorLightGray">#D9DAE3</Color>
+        <Color x:Key="ColorRed">#F16245</Color>
+        <Color x:Key="ColorBlue">#092A46</Color>
+        <Color x:Key="ColorDarkBlue">#314E69</Color>
+        <Color x:Key="ColorLightBlue">#17B2D4</Color>
+        <Color x:Key="ColorYellow">#F0AF00</Color>
+        <Color x:Key="ColorGray">#707070</Color>
+        <Color x:Key="ColorOrange">#ED4E34</Color>
+        <Color x:Key="ColorDarkOrange">#E64522</Color>
+        <Color x:Key="ColorLighterBlueGray">#8FA0B0</Color>
+        <Color x:Key="ColorLightBlueGray">#49657A</Color>
+        <Color x:Key="ColorCinnabar">#E64522</Color>
+        <Color x:Key="ColorAthensGray">#F3F4F6</Color>
+        <Color x:Key="ColorCerulean">#17B2D4</Color>
+        <Color x:Key="ColorDeepCerulean">#006FB4</Color>
+        <Color x:Key="ColorDefaultGray">#868A8B</Color>
+        <Color x:Key="ColorBaliHai">#8FA0B0</Color>
+        <Color x:Key="ColorGrayDots">#D7DBE2</Color>
+        <Color x:Key="ColorPadraoDeselecionado">#e0dfdf</Color>
+
+        <OnPlatform x:Key="FontURobotoBlack"
+                    x:TypeArguments="x:String">
+            <On Platform="Android"
+                Value="Roboto-Black.ttf#Roboto Black" />
+            <On Platform="iOS"
+                Value="Roboto-Black" />
+        </OnPlatform>
+
+        <OnPlatform x:Key="FontRobotoLight"
+                    x:TypeArguments="x:String">
+            <On Platform="Android"
+                Value="Roboto-Light.ttf#Roboto Light" />
+            <On Platform="iOS"
+                Value="Roboto-Light" />
+        </OnPlatform>
+
+        <Style x:Key="CustomEntryStyle"
+               TargetType="controles:CustomEntry">
+            <Setter Property="FontSize"
+                    Value="15" />
+            <Setter Property="CornerRadius"
+                    Value="10" />
+            <Setter Property="HeightRequest"
+                    Value="45" />
+            <Setter Property="AltFontFamily">
+                <OnPlatform x:TypeArguments="x:String">
+                    <On Platform="Android"
+                        Value="Roboto-Light.ttf#Roboto Light" />
+                    <On Platform="iOS"
+                        Value="Roboto-Light" />
+                </OnPlatform>
+            </Setter>
+            <Setter Property="FontFamily">
+                <OnPlatform x:TypeArguments="x:String">
+                    <On Platform="Android"
+                        Value="Roboto-Light.ttf#Roboto Light" />
+                    <On Platform="iOS"
+                        Value="Roboto-Light" />
+                </OnPlatform>
+            </Setter>
+        </Style>
+
+        <Style x:Key="CustomLabelStyle"
+               TargetType="Label">
+            <Setter Property="TextColor"
+                    Value="{DynamicResource DynamicTextColor}" />
+            <Setter Property="FontFamily">
+                <OnPlatform x:TypeArguments="x:String">
+                    <On Platform="Android"
+                        Value="Roboto-Light.ttf#Roboto Light" />
+                    <On Platform="iOS"
+                        Value="Roboto-Light" />
+                </OnPlatform>
+            </Setter>
+        </Style>
+
+        <Style x:Key="CustomLabelLightStyle"
+               TargetType="Label">
+            <Setter Property="TextColor"
+                    Value="{DynamicResource DynamicTextColor}" />
+            <Setter Property="FontFamily">
+                <OnPlatform x:TypeArguments="x:String">
+                    <On Platform="Android"
+                        Value="Roboto-Light.ttf#Roboto Light" />
+                    <On Platform="iOS"
+                        Value="Roboto-Light" />
+                </OnPlatform>
+            </Setter>
+        </Style>
+
+        <Style x:Key="CustomLabelMediumStyle"
+               TargetType="Label">
+            <Setter Property="TextColor"
+                    Value="{DynamicResource DynamicTextColor}" />
+            <Setter Property="FontFamily">
+                <OnPlatform x:TypeArguments="x:String">
+                    <On Platform="Android"
+                        Value="Roboto-Light.ttf#Roboto Light" />
+                    <On Platform="iOS"
+                        Value="Roboto-Light" />
+                </OnPlatform>
+            </Setter>
+        </Style>
+
+        <Style x:Key="CustomLabelBoldStyle"
+               TargetType="Label">
+            <Setter Property="TextColor"
+                    Value="{DynamicResource DynamicTextColor}" />
+            <Setter Property="FontFamily">
+                <OnPlatform x:TypeArguments="x:String">
+                    <On Platform="Android"
+                        Value="Roboto-Black.ttf#Roboto Black" />
+                    <On Platform="iOS"
+                        Value="Roboto-Black" />
+                </OnPlatform>
+            </Setter>
+        </Style>
+
+        <Style x:Key="LinkButtonStyle"
+               TargetType="Button">
+            <Setter Property="TextColor"
+                    Value="{DynamicResource DynamicTextColor}" />
+            <Setter Property="BorderColor"
+                    Value="Transparent" />
+            <Setter Property="BackgroundColor"
+                    Value="Transparent" />
+            <Setter Property="FontSize"
+                    Value="Large" />
+            <Setter Property="Scale"
+                    Value="0.5" />
+            <Setter Property="CornerRadius"
+                    Value="10" />
+            <Setter Property="FontFamily">
+                <OnPlatform x:TypeArguments="x:String">
+                    <On Platform="Android"
+                        Value="Roboto-Black.ttf#Roboto Black" />
+                    <On Platform="iOS"
+                        Value="Roboto-Black" />
+                </OnPlatform>
+            </Setter>
+        </Style>
+
+        <Style x:Key="CustomButtonStyle"
+               TargetType="controles:CustomButton">
+            <Setter Property="BackgroundColor"
+                    Value="{DynamicResource DynamicBackgroundColor}" />
+            <Setter Property="TextColor"
+                    Value="{DynamicResource DynamicTextColor}" />
+            <Setter Property="BorderColor"
+                    Value="{DynamicResource DynamicTextColor}" />
+            <Setter Property="AltBackgroundColor"
+                    Value="{DynamicResource DynamicBackgroundColor}" />
+            <Setter Property="AltTextColor"
+                    Value="{DynamicResource DynamicTextColor}" />
+            <Setter Property="AltBorderColor"
+                    Value="{DynamicResource DynamicTextColor}" />
+            <Setter Property="BorderWidth"
+                    Value="1" />
+            <Setter Property="FontSize"
+                    Value="Medium" />
+            <Setter Property="CornerRadius"
+                    Value="10" />
+            <Setter Property="FontFamily">
+                <OnPlatform x:TypeArguments="x:String">
+                    <On Platform="Android"
+                        Value="Roboto-Black.ttf#Roboto Black" />
+                    <On Platform="iOS"
+                        Value="Roboto-Black" />
+                </OnPlatform>
+            </Setter>
+        </Style>
+
+    </Application.Resources>
+</Application>

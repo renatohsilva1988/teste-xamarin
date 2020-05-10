@@ -1,0 +1,118 @@
+﻿<?xml version="1.0" encoding="utf-8" ?>
+<base:BasePage xmlns:base="clr-namespace:MarvelApp.View.Base"
+               xmlns="http://xamarin.com/schemas/2014/forms"
+               xmlns:x="http://schemas.microsoft.com/winfx/2009/xaml"
+               xmlns:d="http://xamarin.com/schemas/2014/forms/design"
+               xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006"
+               xmlns:converter="clr-namespace:MarvelApp.Converter"
+               xmlns:ffimageloading="clr-namespace:FFImageLoading.Forms;assembly=FFImageLoading.Forms"
+               xmlns:fftransformations="clr-namespace:FFImageLoading.Transformations;assembly=FFImageLoading.Transformations"
+               xmlns:behavior="clr-namespace:MarvelApp.Behaviors"
+               xmlns:components="clr-namespace:MarvelApp.View.Components"
+               xmlns:extension="clr-namespace:Xamarin.Forms.Skeleton;assembly=Xamarin.Forms.Skeleton"
+               mc:Ignorable="d"
+               AutomationId="PageHeroes"
+               x:Class="MarvelApp.View.HeroesView">
+    <base:BasePage.Resources>
+        <ResourceDictionary>
+            <converter:CustomConverter x:Key="EventArgs" />
+            <converter:ImageToStringConverter x:Key="imageConverter" />
+        </ResourceDictionary>
+    </base:BasePage.Resources>
+    <base:BasePage.Content>
+        <Grid BackgroundColor="{DynamicResource DynamicBackgroundColor}">
+            <Grid.RowDefinitions>
+                <RowDefinition Height="Auto" />
+                <RowDefinition Height="*" />
+            </Grid.RowDefinitions>
+
+            <components:Header Grid.Row="0"
+                               Margin="0"
+                               HeaderTitle="{Binding HeaderTitle}"
+                               HeaderTitleComplement="{Binding HeaderTitleComplement}"
+                               ShowBackIcon="{Binding ShowBackIcon}" />
+
+            <Grid Grid.Row="1"
+                  x:Name="MainGrid">
+                <Grid.RowDefinitions>
+                    <RowDefinition Height="Auto" />
+                    <RowDefinition Height="*" />
+                    <RowDefinition Height="Auto" />
+                </Grid.RowDefinitions>
+               
+                <SearchBar Grid.Row="0"
+                           Placeholder="Pesquisar"
+                           BackgroundColor="{DynamicResource DynamicTextColor}"
+                           TextColor="{DynamicResource DynamicBackgroundColor}"
+                           HeightRequest="50"
+                           Text="{Binding SearchText, Mode=TwoWay}"
+                           SearchCommand="{Binding SearchCommand}">
+                    <SearchBar.Behaviors>
+                        <behavior:EventToCommandSearchBehavior EventName="TextChanged"
+                                                               Command="{Binding SearchCommand}"
+                                                               CommandParameter="{x:Reference MainGrid}" />
+                    </SearchBar.Behaviors>
+                </SearchBar>
+
+                <ListView Grid.Row="1"
+                          HorizontalOptions="FillAndExpand"
+                          VerticalOptions="FillAndExpand"
+                          CachingStrategy="RecycleElement"
+                          HasUnevenRows="True"                          
+                          ItemsSource="{Binding Characters}"
+                          SeparatorColor="{DynamicResource DynamicTextColor}"
+                          BackgroundColor="{DynamicResource DynamicBackgroundColor}"
+                          extension:Skeleton.IsParent="True"
+                          extension:Skeleton.IsBusy="{Binding IsBusy}">
+                    <ListView.Behaviors>
+                        <behavior:InfiniteScrollBehaviorListView LoadMoreCommand="{Binding LoadMoreCommand}"
+                                                                 IsLoadingMore="{Binding IsLoadingMore}" />
+                        <behavior:EventToCommandListBehavior EventName="ItemTapped"
+                                                             Command="{Binding TapCommand}"
+                                                             Converter="{StaticResource EventArgs}"/>
+                    </ListView.Behaviors>
+                    <ListView.ItemTemplate>
+                        <DataTemplate>
+                            <ViewCell>
+                                <Frame BackgroundColor="{DynamicResource DynamicBackgroundColor}">
+                                    <Grid>
+                                        <Grid.ColumnDefinitions>
+                                            <ColumnDefinition Width="Auto" />
+                                            <ColumnDefinition Width="*" />
+                                        </Grid.ColumnDefinitions>
+
+                                        <ffimageloading:CachedImage Grid.Column="0"
+                                                                    HorizontalOptions="Start"
+                                                                    VerticalOptions="Center"
+                                                                    Margin="12,18"
+                                                                    WidthRequest="56"
+                                                                    HeightRequest="56"
+                                                                    Source="{Binding Thumbnail,
+                                                                                     Converter={StaticResource imageConverter}}">
+                                            <ffimageloading:CachedImage.Transformations>
+                                                <fftransformations:CircleTransformation />
+                                            </ffimageloading:CachedImage.Transformations>
+                                        </ffimageloading:CachedImage>
+
+                                        <Label Grid.Column="1"
+                                               Text="{Binding Name}"
+                                               Style="{StaticResource CustomLabelStyle}"
+                                               HorizontalOptions="Start"
+                                               VerticalOptions="Center" />
+                                    </Grid>
+                                </Frame>
+                            </ViewCell>
+                        </DataTemplate>
+                    </ListView.ItemTemplate>
+                </ListView>
+
+                <ActivityIndicator Grid.Row="2"
+                                   IsVisible="{Binding IsLoadingMore}"
+                                   IsRunning="{Binding IsLoadingMore}"
+                                   HorizontalOptions="Center"
+                                   VerticalOptions="End"
+                                   BackgroundColor="Transparent" />
+            </Grid>
+        </Grid>
+    </base:BasePage.Content>
+</base:BasePage>

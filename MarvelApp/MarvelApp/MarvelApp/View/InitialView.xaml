@@ -1,0 +1,118 @@
+﻿<?xml version="1.0" encoding="utf-8" ?>
+<base:BasePage xmlns:base="clr-namespace:MarvelApp.View.Base"
+               xmlns="http://xamarin.com/schemas/2014/forms"
+               xmlns:x="http://schemas.microsoft.com/winfx/2009/xaml"
+               xmlns:d="http://xamarin.com/schemas/2014/forms/design"
+               xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006"
+               xmlns:controles="clr-namespace:MarvelApp.Controls"
+               mc:Ignorable="d"
+               BackgroundColor="{DynamicResource DynamicBackgroundColor}"
+               AutomationId="PageInitial"
+               x:Class="MarvelApp.View.InitialView">
+    <ContentPage.Content>
+        <ScrollView>
+            <Grid>                
+                <Grid.RowDefinitions>
+                    <RowDefinition Height="*" />
+                    <RowDefinition Height="Auto" />
+                </Grid.RowDefinitions>
+                
+                <Grid Grid.Row="0"
+                      VerticalOptions="CenterAndExpand"
+                      HorizontalOptions="CenterAndExpand">
+
+                    <Grid.RowDefinitions>
+                        <RowDefinition Height="Auto" />
+                        <RowDefinition Height="*" />
+                        <RowDefinition Height="*" />
+                        <RowDefinition Height="*" />
+                        <RowDefinition Height="*" />
+                        <RowDefinition Height="*" />
+                    </Grid.RowDefinitions>
+
+                    <Grid.ColumnDefinitions>
+                        <ColumnDefinition Width="Auto" />
+                        <ColumnDefinition Width="*" />
+                        <ColumnDefinition Width="Auto" />
+                    </Grid.ColumnDefinitions>
+
+                    <Image x:Name="Logo"
+                           Grid.Row="0"
+                           Grid.Column="1"
+                           Source="logo.png"
+                           HeightRequest="150"
+                           MinimumHeightRequest="150"
+                           VerticalOptions="CenterAndExpand"
+                           HorizontalOptions="CenterAndExpand"
+                           Aspect="AspectFit" />
+
+                    <Grid Grid.Row="1"
+                          Grid.Column="1"
+                          VerticalOptions="CenterAndExpand"
+                          HorizontalOptions="StartAndExpand">
+
+                        <Grid.ColumnDefinitions>
+                            <ColumnDefinition Width="Auto" />
+                            <ColumnDefinition Width="*" />
+                        </Grid.ColumnDefinitions>
+                        
+                        <CheckBox IsChecked="{Binding LembreMe}"
+                                  Color="{DynamicResource DynamicTextColor}"
+                                  Grid.Column="0"
+                                  HorizontalOptions="FillAndExpand"
+                                  VerticalOptions="CenterAndExpand" />
+                        
+                        <Label Grid.Column="1"
+                               Margin="0"
+                               Text="Lembrar-me"
+                               HorizontalOptions="StartAndExpand"
+                               VerticalOptions="CenterAndExpand"
+                               Style="{StaticResource CustomLabelStyle}" />
+                    </Grid>
+
+                    <controles:CustomEntry Text="{Binding Usuario}"
+                                           Grid.Row="2"
+                                           Grid.Column="1"
+                                           Placeholder="Usuário"
+                                           FontSize="Small"
+                                           HorizontalOptions="FillAndExpand"
+                                           VerticalOptions="CenterAndExpand"
+                                           Style="{StaticResource CustomEntryStyle}" />
+
+                    <controles:CustomButton Text="Entrar"
+                                            Grid.Row="3"
+                                            Grid.Column="1"
+                                            Command="{Binding EntrarCommand}"
+                                            HorizontalOptions="FillAndExpand"
+                                            VerticalOptions="CenterAndExpand"
+                                            FontSize="Small"
+                                            Style="{StaticResource CustomButtonStyle}" />
+
+                    <controles:CustomButton Text="Modo Claro"
+                                            Grid.Row="4"
+                                            Grid.Column="1"
+                                            Command="{Binding ModoClaroCommand}"
+                                            HorizontalOptions="FillAndExpand"
+                                            VerticalOptions="CenterAndExpand"
+                                            FontSize="Small"
+                                            Style="{StaticResource CustomButtonStyle}" />
+
+                    <controles:CustomButton Text="Modo Escuro"
+                                            Grid.Row="5"
+                                            Grid.Column="1"
+                                            Command="{Binding ModoEscuroCommand}"
+                                            HorizontalOptions="FillAndExpand"
+                                            VerticalOptions="CenterAndExpand"
+                                            FontSize="Small"
+                                            Style="{StaticResource CustomButtonStyle}" />
+                </Grid>
+                <Label Grid.Row="1"
+                       Margin="0,0,0,10"
+                       Text="Versão 1.0.0"
+                       HorizontalOptions="CenterAndExpand"
+                       VerticalOptions="CenterAndExpand"
+                       Style="{StaticResource CustomLabelStyle}" />
+            </Grid>
+        </ScrollView>
+    </ContentPage.Content>
+</base:BasePage>

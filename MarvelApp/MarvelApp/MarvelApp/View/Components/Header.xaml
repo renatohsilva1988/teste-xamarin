@@ -1,0 +1,96 @@
+﻿<?xml version="1.0" encoding="UTF-8"?>
+<ContentView xmlns="http://xamarin.com/schemas/2014/forms"
+             xmlns:x="http://schemas.microsoft.com/winfx/2009/xaml"
+             xmlns:converter="clr-namespace:MarvelApp.Converter"
+             x:Class="MarvelApp.View.Components.Header">
+    <ContentView.Resources>
+        <ResourceDictionary>
+            <converter:StringCaseConverter x:Key="caseConverter" />
+        </ResourceDictionary>
+    </ContentView.Resources>
+
+    <ContentView.Content>
+        <StackLayout Spacing="0">
+            <Grid BackgroundColor="{DynamicResource DynamicBarColor}"
+                  RowSpacing="0"
+                  Margin="0"
+                  Padding="0">
+
+                <Grid.ColumnDefinitions>
+                    <ColumnDefinition Width="Auto" />
+                    <ColumnDefinition Width="*" />
+                    <ColumnDefinition Width="Auto" />
+                </Grid.ColumnDefinitions>
+
+                <ImageButton Margin="15"
+                             BackgroundColor="Transparent"
+                             Command="{Binding BackCommand}"
+                             Opacity="{Binding ShowBackIcon}"
+                             IsEnabled="{Binding ShowBackIcon}"
+                             WidthRequest="24"
+                             HeightRequest="24"
+                             MinimumHeightRequest="24"
+                             MinimumWidthRequest="24"
+                             Source="icon_arrow_left.png"
+                             VerticalOptions="CenterAndExpand"
+                             Aspect="AspectFill" />
+
+                <Label Grid.Column="1"
+                       Margin="15"
+                       LineBreakMode="WordWrap"
+                       HorizontalOptions="CenterAndExpand"
+                       VerticalOptions="CenterAndExpand">
+                    <Label.FormattedText>
+                        <FormattedString>
+                            <Span Text="{Binding HeaderTitle, Converter={StaticResource caseConverter}, ConverterParameter=u}"
+                                  FontFamily="{StaticResource FontURobotoBlack}"
+                                  ForegroundColor="{DynamicResource DynamicTextColor}"
+                                  FontAttributes="Bold" />
+                            <Span Text=" "/>
+                            <Span Text="{Binding HeaderTitleComplement, Converter={StaticResource caseConverter}, ConverterParameter=u}"
+                                  FontFamily="{StaticResource FontRobotoLight}"
+                                  ForegroundColor="{DynamicResource DynamicTextColor}"
+                                  FontAttributes="Italic" />
+                        </FormattedString>
+                    </Label.FormattedText>
+                </Label>
+
+                <ImageButton Grid.Column="2"
+                             Margin="15"
+                             BackgroundColor="Transparent"
+                             Command="{Binding LogoutCommand}"
+                             Opacity="{Binding ShowInfoIcon}"
+                             IsEnabled="{Binding ShowInfoIcon}"
+                             Source="logout.png"
+                             WidthRequest="24"
+                             HeightRequest="24"
+                             MinimumHeightRequest="24"
+                             MinimumWidthRequest="24"
+                             VerticalOptions="CenterAndExpand"
+                             Aspect="AspectFill" />
+
+            </Grid>
+
+            <BoxView BackgroundColor="{StaticResource ColorLightGray}"
+                     HeightRequest="1"
+                     Margin="0"
+                     HorizontalOptions="FillAndExpand"
+                     VerticalOptions="End" />
+
+            <Grid IsVisible="{Binding ShowMessage}"
+                  BackgroundColor="{StaticResource ColorRed}"
+                  Padding="10"
+                  Margin="0">
+
+                <Label Text="{Binding Message}"
+                       TextColor="{StaticResource ColorWhite}"
+                       HorizontalOptions="CenterAndExpand"
+                       VerticalOptions="CenterAndExpand"
+                       Style="{StaticResource CustomLabelStyle}"
+                       XAlign="Center"
+                       FontSize="Small"
+                       Margin="0" />
+            </Grid>
+        </StackLayout>
+    </ContentView.Content>
+</ContentView>
